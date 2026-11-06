@@ -12,7 +12,8 @@ No other XR Porting Hub patches, 4XVR patches or retired experiments are importe
 
 Morphe's patch framework/build plugin and patch-list generator retain their
 original notices. Gradle wrapper is Apache-2.0. Shizuku API 13.1.5 (RikkaApps,
-Apache-2.0) is included in the shared bridge DEX. Native layers use Khronos OpenXR
+MIT) is included in the shared bridge DEX; its license is shipped under
+`patches/src/main/resources/licenses/`. Native layers use Khronos OpenXR
 headers. Dependency code is not claimed as original controller work.
 
 Not affiliated with Valve, Samsung, Google, Meta or the Morphe project.

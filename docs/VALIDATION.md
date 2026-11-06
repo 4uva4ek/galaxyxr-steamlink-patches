@@ -35,6 +35,12 @@ All three beta region hashes match the Kotlin guard and shipped native layer.
   earlier versions, malformed-input rejection, defaults, option transitions,
   manifests and extension DEX are covered.
 - `:patches:buildAndroid` and `:patches:generatePatchesList`: passed.
+- Source-only checkout with freshly fetched, pinned official framework sources:
+  **33 executed, 1 skipped, 0 failed**; the real-scene test correctly skips when
+  no input is supplied. Compilation/packaging passed. Test verdict caching is
+  disabled so an optional-input audit cannot reuse another environment's pass.
+  Bundle entry bytes match the original checkout except for the framework's
+  build timestamp in `META-INF/MANIFEST.MF`.
 - Actual MPP load inventory: exactly the six documented public controller patches.
   The audit JVM excludes compiled production classes/resources from its parent
   classpath, so it loads the shipped archive itself.
@@ -52,7 +58,8 @@ All three beta region hashes match the Kotlin guard and shipped native layer.
 - Pose time plus extrapolation is correctly rejected, preserving its conflict guard.
 - Reapplying throw + extrapolation adds/changes no APK entries. Reapplying the
   Shizuku pair adds no entries or classes; all **171** existing classes survive
-  unchanged. The resource packager re-encodes the binary manifest.
+  unchanged. The resource packager re-encodes the binary manifest; decoded XML
+  remains identical except for source-line metadata.
 
 ## Runtime limits
 

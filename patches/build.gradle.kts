@@ -33,6 +33,9 @@ tasks.register<JavaExec>("generatePatchesList") {
     args("all")
 }
 tasks.test {
+    // Exact-base audits depend on optional external inputs. Never replay cached test verdicts.
+    outputs.upToDateWhen { false }
+    outputs.cacheIf { false }
     System.getenv("STEAMLINK_APK")?.let { environment("STEAMLINK_APK", it) }
 }
 listOf("velocity", "throw", "time", "shizuku", "conflict").forEach { scenario ->

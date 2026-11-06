@@ -36,7 +36,7 @@ restarted.
 ## Build
 
 Take `classes.jar` out of the `api`, `provider`, `aidl` and `shared` AARs of
-`dev.rikka.shizuku` 13.1.5 (Maven Central, Apache-2.0), then
+`dev.rikka.shizuku` 13.1.5 (Maven Central, MIT), then
 
 ```powershell
 javac --release 8 -cp "<android.jar>;api.jar;provider.jar;aidl.jar;shared.jar" -d classes java/gxr/shizuku/*.java
