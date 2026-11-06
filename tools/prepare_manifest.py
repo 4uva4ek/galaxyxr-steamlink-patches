@@ -17,7 +17,9 @@ with zipfile.ZipFile(artifact) as bundle:
         raise SystemExit('Bundle version or Android DEX missing')
 sha = hashlib.sha256(artifact.read_bytes()).hexdigest()
 description = 'Six existing 4uva4ek controller patches. Exact beta 2.0.24/5002527 plus retained earlier builds. Host patching validated; beta gameplay not yet validated.'
-data = dict(created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+# Custom sources are decoded as ReleaseAsset with LocalDateTimeSerializer.
+# It requires an ISO local date-time, without Z or an offset (time is UTC).
+data = dict(created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S'),
             description=description,
             download_url=f'https://github.com/4uva4ek/galaxyxr-steamlink-patches/releases/download/v{version}/patches-{version}.mpp',
             signature_download_url='',version=version)
