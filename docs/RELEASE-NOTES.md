@@ -1,10 +1,10 @@
-Independent source containing only 4uva4ek's six existing Steam Link controller patches and their required helpers.
+Restores two omitted 4uva4ek patches, bringing the independent source to eight public features.
 
-- Adds exact beta 2.0.24 / 5002527 and retains 5001712, 5001812, 5001968, 5002244, 5002363 and 5002395.
-- Throw angle retains its native-XR scope: 5002363, 5002395 and 5002527; default 13 degrees when selected.
-- Velocity frame remains on by default. Other features remain opt-in; pose time defaults to 5 ms.
-- No image, codec, network, face, resolution or other-app patches are included.
-- Host-side tests and patch application are validated. Fresh beta headset gameplay is not yet validated.
-- Shizuku features need the running service and permission. Keep compatibility checks enabled.
+- **Galaxy XR SteamVR driver (galaxyxr)**: original HMD/controller identities, vendor resource paths and configurable grip offsets. Requires the PC-side Galaxy XR VRLink Setup. Default off.
+- **OpenXR CPU and GPU BOOST (experimental)**: original OpenXR performance-hint layer. Default off.
+- Both support exact beta **2.0.24/5002527** and retain 5001712, 5001812, 5001968, 5002244, 5002363 and 5002395.
+- The original six controller patches retain their defaults and options.
+- The driver patch directly edits config assets, without pulling in upstream Device identity or launch patches. Unknown packages/builds remain inert. Both assets are validated before either is written.
+- Source timestamp formatting retains the Unnamed fix.
 
-Import the MPP, or add `4uva4ek/galaxyxr-steamlink-patches` as a GitHub source in Morphe.
+Host patching is verified separately from gameplay. No fresh beta gameplay, driver connection or BOOST performance measurement is claimed. Update the existing source in Morphe; no new repository is needed.

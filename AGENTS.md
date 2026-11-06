@@ -1,6 +1,7 @@
 # Galaxy XR Steam Link Patches
 
-Maintain only 4uva4ek's six controller features and required helpers. Preserve
+Maintain 4uva4ek's existing author patches: six controller features, Galaxy XR
+vendor-driver identity and OpenXR CPU/GPU BOOST, plus their required helpers. Preserve
 attribution and existing supported exact version/code pairs. Do not import other
 XR Porting Hub features or reconnect an upstream remote without a user request.
 Retired frame synthesis, Full-FOV canvas and hitch experiments stay retired.

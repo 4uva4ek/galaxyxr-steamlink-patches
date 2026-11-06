@@ -18,7 +18,7 @@ object Constants {
         appIconColor = 0x1B2838,
         targets = listOf(AppTarget(version = build.first,
             versionCodes = SupportedAbi.entries.associateWith { build.second },
-            description = "Controller patches for exact Steam Link ${build.first}/${build.second}.")),
+            description = "Author patches for exact Steam Link ${build.first}/${build.second}.")),
     )
     val COMPATIBILITIES_STEAM_LINK = (legacy + native).map { compatibility(it) }
     val COMPATIBILITIES_STEAM_LINK_EXPERIMENTAL = (legacy + native).map { compatibility(it, true) }

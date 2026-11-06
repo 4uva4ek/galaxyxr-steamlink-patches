@@ -3,7 +3,7 @@ patches {
     extensionsProjectPath = null
     about {
         name = "Galaxy XR Steam Link Patches"
-        description = "4uva4ek's controller tracking, timing, throw direction and haptics patches for Steam Link VR"
+        description = "4uva4ek's controller, Galaxy XR vendor-driver and OpenXR BOOST patches for Steam Link VR"
         source = "https://github.com/4uva4ek/galaxyxr-steamlink-patches"
         author = "4uva4ek"
         contact = "https://github.com/4uva4ek"
@@ -38,7 +38,7 @@ tasks.test {
     outputs.cacheIf { false }
     System.getenv("STEAMLINK_APK")?.let { environment("STEAMLINK_APK", it) }
 }
-listOf("velocity", "throw", "time", "shizuku", "conflict").forEach { scenario ->
+listOf("velocity", "throw", "time", "shizuku", "conflict", "driver", "boost", "driverBoost").forEach { scenario ->
     tasks.register<JavaExec>("audit" + scenario.replaceFirstChar { it.uppercase() }) {
         dependsOn("testClasses", "buildAndroid")
         // Load production classes/resources from the actual MPP, never the source build tree.

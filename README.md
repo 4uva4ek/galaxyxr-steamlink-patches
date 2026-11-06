@@ -1,14 +1,14 @@
 # Galaxy XR Steam Link Patches
 
-4uva4ek's independent controller patch source for [Morphe](https://morphe.software).
+4uva4ek's independent Steam Link patch source for [Morphe](https://morphe.software).
 This repository has its own history, releases and update URL. It does not merge or
-automatically follow XR Porting Hub. It contains only the existing controller
+automatically follow XR Porting Hub. It contains only the existing author
 features listed below and their required helpers.
 
 [**Add this source to Morphe**](https://morphe.software/add-source?github=4uva4ek/galaxyxr-steamlink-patches)
 
 Alternatively, add `4uva4ek/galaxyxr-steamlink-patches` as a GitHub source in
-Morphe Manager, or import `patches-1.0.0.mpp` from [Releases](https://github.com/4uva4ek/galaxyxr-steamlink-patches/releases).
+Morphe Manager, or import `patches-1.1.0.mpp` from [Releases](https://github.com/4uva4ek/galaxyxr-steamlink-patches/releases).
 The update manifest is [patches-bundle.json](https://raw.githubusercontent.com/4uva4ek/galaxyxr-steamlink-patches/main/patches-bundle.json).
 
 ## Patches
@@ -21,6 +21,8 @@ The update manifest is [patches-bundle.json](https://raw.githubusercontent.com/4
 | Controller throw angle (experimental) | Off, 13 degrees | 5002363, 5002395, 5002527 |
 | Controller tracking from the controller HAL through Shizuku | Off | All seven below |
 | Controller grip haptics through Shizuku | Off | All seven below |
+| Galaxy XR SteamVR driver (galaxyxr) | Off | All seven below |
+| OpenXR CPU and GPU BOOST (experimental) | Off | All seven below |
 
 Supported package: `com.valvesoftware.steamlinkvr` (arm64 native payloads).
 
@@ -38,11 +40,21 @@ Other codes, including 5002389, are not declared compatible.
 ## Using the source
 
 Use Morphe Manager 1.30.0 or newer. Choose your exact Steam Link APK and this
-source's controller patches. The beta already has native Android XR support.
+source's patches. The beta already has native Android XR support.
 This source intentionally does not provide the launch/Android XR port required
 by older Quest-only APKs, or image, codec, face, resolution or network patches.
 Earlier versions retain their controller support and may need an independently
 prepared working Android XR base.
+
+The vendor-driver patch requires the PC-side **Galaxy XR VRLink Setup** with
+the `galaxyxr` resource driver. It sets HMD/controller names and resource paths,
+keeps the VRLink-required `oculus_touch` controller type and hand suffixes, and
+preserves the calibrated grip defaults: position `-0.7,0.279,-5.279` cm and
+rotation `1.4,0,0` degrees. It directly edits existing config entries, including
+the legacy fallback, without importing upstream launch or identity patches.
+
+BOOST requests OpenXR CPU/GPU performance hints. Runtime acceptance does not
+prove higher clocks or frame rate; no new beta runtime measurement is claimed.
 
 Do not select the same controller feature from another source at the same time.
 Do not stack equivalent KernelSU controller modules and APK layers.
@@ -91,5 +103,5 @@ No APK or private device data is published.
 
 ## Credits and license
 
-Controller work: **4uva4ek**. See [CREDITS](CREDITS.md) for retained integration and
+Controller, vendor-driver identity and BOOST work: **4uva4ek**. See [CREDITS](CREDITS.md) for retained integration and
 dependency attribution. GPLv3; [LICENSE](LICENSE) and [NOTICE](NOTICE).

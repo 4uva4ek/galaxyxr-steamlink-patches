@@ -323,5 +323,60 @@
     "path": "extensions/shizuku-bridge/java/gxr/shizuku/ShizukuBridge.java",
     "source": "xr-porting-hub-4efb4ac",
     "sha256": "a06bffc9402209052cc0c78f1d3bd3fa9ea3eb08837be3e6eb68b0f04d6ed2e8"
+  },
+  {
+    "path": "patches/src/main/kotlin/app/template/patches/steamlink/identity/GalaxyXrVendorDriverPatch.kt",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "199db32f689f0f2058ca21c344052bc4ac60d942806b1240d87aafe9ec6b1097"
+  },
+  {
+    "path": "patches/src/main/kotlin/app/template/patches/steamlink/androidxr/PerformanceBoostPatch.kt",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "e5bd7bdd82b66735f2e8d9af8b4cc92111951ffec9b6851e15989e5d83ba8437"
+  },
+  {
+    "path": "patches/src/test/kotlin/app/template/patches/steamlink/identity/GalaxyXrVendorDriverPatchTest.kt",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "a4d9c6c2d81e1d1f05c458e440515df6a5d910f9c7684f12d3a13a36aba530e3"
+  },
+  {
+    "path": "patches/src/test/kotlin/app/template/patches/steamlink/androidxr/PerformanceBoostPatchTest.kt",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "4efc699bbbc195d753ee0a7ecfeca1147047f6fe225c3c81c9526c0c772fe5f1"
+  },
+  {
+    "path": "patches/src/main/resources/steamlink/androidxr/libgxr_performance_boost.so",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "c70ff32251c92a9c0ba5034891994ee0b56261d8b9f2dbadef2e2c6dd147552c"
+  },
+  {
+    "path": "patches/src/main/resources/steamlink/androidxr/XR_APILAYER_local_GalaxyXR_performance_boost.json",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "cbe54e51de51cc4a063c920df09b7042aaa6fee9377e24fb7f0613dbefe26fcf"
+  },
+  {
+    "path": "extensions/performance-boost/build_standalone.py",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "7c9c3aa39bad9e687339e65eaaf4a8c88f06a50434d4e638eeda727254c5ce7c"
+  },
+  {
+    "path": "extensions/performance-boost/CMakeLists.txt",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "af40d89e947385f8c5b89ee8d5c0c211d7c0f0eb2bdf2ac479bba9653c40a0a5"
+  },
+  {
+    "path": "extensions/performance-boost/README.md",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "630deaf8d47a6f8ccd9bcce2c4f83d564161e3b7ef21ac5521e47b3f77fc0513"
+  },
+  {
+    "path": "extensions/performance-boost/src/layer.cpp",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "7921f45911cf5dd426e4a9b940e22f9f861405ea2687d08cb76f443a1414cf9a"
+  },
+  {
+    "path": "extensions/performance-boost/tests/lifecycle.cpp",
+    "source": "4uva4ek-working-copy; authored in 739b04c/24e658a (vendor driver) or 02b931c (BOOST)",
+    "sha256": "1f3012d977ea4f73b57bb30980128efd53462326c9765b09d7a6b725d1dc99f8"
   }
 ]

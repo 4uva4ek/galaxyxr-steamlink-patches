@@ -1,6 +1,40 @@
 # Validation — 2026-11-06
 
-## Scope
+## Version 1.1.0 correction
+
+The initial release omitted two author features. Version 1.1.0 contains **eight**
+public patches, adding **Galaxy XR SteamVR driver (galaxyxr)** and **OpenXR CPU
+and GPU BOOST (experimental)**. Both keep their original default-off settings
+and support all seven exact version/code pairs, including beta 5002527.
+See [author inventory](AUTHOR-INVENTORY.md) for the provenance review.
+
+- Unit/fixture tests: **44 executed, 0 skipped, 0 failed** with retained scene
+  inputs. Driver tests cover original identities, field preservation, custom
+  offsets, idempotence, malformed inputs and exact package/build guards.
+  BOOST tests cover all seven exact targets, foreign target rejection, the ARM64
+  entry point/manifest and SHA-256 pin of the unchanged original native payload.
+- Without external scene inputs: **43 executed, 1 skipped, 0 failed**. The one
+  real-scene audit skips explicitly; portable metadata and payload tests pass.
+- BuildAndroid and generated catalogs: passed; actual MPP load inventory is
+  exactly the eight documented public patches.
+- Full MPP application to original **5002527, 5002395 and 5001812** passed in
+  three scenarios each: driver only, BOOST only, and driver + BOOST + velocity.
+  Driver changes only the two config assets. Independent JSON comparisons check
+  vendor paths, HMD/controller identity, the required controller type/hand
+  suffixes, calibrated offsets and preservation of every other config field.
+  BOOST adds only its two layer files. All original DEX, manifests, resources,
+  native libraries and unrelated APK entries remain byte-identical.
+- Reapplication of driver + BOOST + velocity on both **5002527 and 5001812**
+  changed and added **zero APK entries**.
+- The vendor patch no longer depends on upstream Device identity/XR foundation
+  patches. It rewrites the existing selected/fallback identities in place and
+  validates both assets before writing. Legacy APK launch support still needs
+  an independently prepared Android XR base; this is not a new legacy port.
+
+No fresh gameplay, PC-driver connection, clock/FPS measurement or runtime BOOST
+success is claimed for the beta. Earlier runtime evidence remains historical.
+
+## Version 1.0.0 scope and historical validation
 
 Six existing controller features were extracted into an independent source.
 The controller-only adaptation from XR Porting Hub commit `4efb4ac` was combined
